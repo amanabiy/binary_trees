@@ -10,7 +10,7 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 		return (NULL);
 	binary_tree_t *parent = node->parent;
 
-	if(parent->left != node)
+	if (parent->left != node)
 	{
 		if (!parent->left)
 			return (NULL);
@@ -20,6 +20,6 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 	{
 		if (!parent->right)
 			return (NULL);
-		return parent->right;
+		return (parent->right);
 	}
 }
