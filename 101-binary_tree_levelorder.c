@@ -3,6 +3,7 @@
  * print_current_level - prints the given level of the tree
  * @tree: a pointer to the root
  * @level: the level to be printed
+ * @func: a function to be applied on each node
  */
 void print_current_level(const binary_tree_t *tree,
 			 int level, void (*func) (int))
@@ -26,7 +27,7 @@ int bt_height(const binary_tree_t *tree)
 {
 	int lheight, rheight;
 
-	if (tree == NULL)
+	if (tree == NULL || (tree->left == NULL && tree->right == NULL))
 		return (0);
 	lheight = bt_height(tree->left);
 	rheight = bt_height(tree->right);
@@ -44,6 +45,9 @@ int bt_height(const binary_tree_t *tree)
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
 	int height, i;
+
+	if (tree == NULL || func == NULL)
+		return;
 
 	height = bt_height(tree);
 	for (i = 1; i <= height; i++)
