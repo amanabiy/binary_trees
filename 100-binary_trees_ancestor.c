@@ -7,6 +7,7 @@
 binary_tree_t *find_the_root(const binary_tree_t *node)
 {
 	binary_tree_t *new_node = (binary_tree_t *)node;
+
 	if (node->parent == NULL)
 		return (new_node);
 	return (node->parent);
@@ -43,16 +44,13 @@ binary_tree_t *bt_ancestor(binary_tree_t *root,
  * @second: is a pointer to the second node
  * Return: a pointer to the lca
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+									const binary_tree_t *second)
 {
 	binary_tree_t *lca;
 
-	/*if (!first || !second)
-		return (NULL);*/
-
-	if (find_the_root(first) != find_the_root(second))
+	if (!first || !second)
 		return (NULL);
-
 	lca = bt_ancestor(find_the_root(first), first, second);
-	return lca;
+	return (lca);
 }
