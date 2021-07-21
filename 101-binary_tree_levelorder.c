@@ -27,7 +27,7 @@ int bt_height(const binary_tree_t *tree)
 {
 	int lheight, rheight;
 
-	if (tree == NULL || (tree->left == NULL && tree->right == NULL))
+	if (tree == NULL)
 		return (0);
 	lheight = bt_height(tree->left);
 	rheight = bt_height(tree->right);
