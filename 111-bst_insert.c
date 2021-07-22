@@ -23,7 +23,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 		{
 			if (temp->n == value)
 				break;
-			if (temp->n < value)
+			if (temp->n > value)
 			{
 				if (!temp->left)
 				{
@@ -32,7 +32,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 				}
 				temp = temp->left;
 			}
-			if (temp->n > value)
+			if (temp->n < value)
 			{
 				if (!temp->right)
 				{
